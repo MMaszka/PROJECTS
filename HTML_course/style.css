@@ -1,0 +1,75 @@
+
+
+
+body{
+	background-color:white;
+	color:black;
+	margin:0px;
+	}
+	
+
+
+	
+
+a{
+	text-decoration:none;
+	
+}
+
+
+
+#spis li{
+	font-size: 20px;
+	
+}
+
+#spis a{
+	font-size: 25px;
+	
+}
+
+
+
+
+
+/* unvisited link */
+a:link {
+    color: #00ff00;
+}
+
+/* visited link */
+a:visited {
+    color: #00ff00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #black;
+}
+
+/* selected link */
+a:active {
+    color: #00ff00;
+}
+
+
+
+	img.gotop {
+		width:30px;
+		height:30px;
+	} 
+	 	img.{
+		width:130px;
+		height:130px;
+	} 
+	
+	h1.lol
+	{
+	background-color:red;
+	color:green;
+	text-align:center;
+	border-bottom:5px solid yellow;
+	margin: 0px;
+	
+	padding:1em;
+}
