@@ -1,0 +1,91 @@
+* {
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+}
+
+
+body
+{
+background-color:blue;	
+padding : 0px;
+margin:0px;
+
+
+}
+#wrapper
+{
+background-color:green;	
+display:block;
+padding: 0px 20px 0px 20px;
+}
+#header
+{
+background-color:black;
+color:white;
+display:block;
+clear:both;
+width:100%;
+float:right;
+}
+#lewy
+{
+background-color:red;
+color:black;
+float: left;
+width:30%;
+}
+#prawy
+{
+background-color:yellow;
+color:black;
+float:right;	
+width:70%;
+}
+#footer
+{
+background-color:white;
+color:black;	
+display:block;
+padding: 10px;
+clear:both;
+
+}
+
+ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	float:right;
+}
+
+li{
+	
+	float:left
+	
+}
+a{
+	display:block;
+	padding:8px;
+	background-color:#dddddd;
+	
+	
+}
+
+
+
+#news p{
+	display:inline;
+	
+	
+}
+
+#articles{
+	
+	
+}
