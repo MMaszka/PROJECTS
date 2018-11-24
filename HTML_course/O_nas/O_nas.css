@@ -1,0 +1,17 @@
+*{
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+}
+
+Button{
+	padding: 1em;
+	margin: 0,25em;
+	border-width: 2px;
+	border-style: solid;
+	border-color:black;
+}
