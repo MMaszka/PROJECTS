@@ -1,43 +1,50 @@
-#Art{
-	display : table;
-	border-spacing:1px;
-	background-color:black;
-	border:5px solid black;
-	
-	
+#art
+{
+   display:table;
+   border-spacing: 1px;
+   background-color : black;
+   border: 5px solid black;
 }
 
-.row{
-	display:table-row;
-	
+.row
+{
+   display: table-row;
 }
 
-.pixel{
-	
-	display:table-cell;
-	width:40px;
-	height:40px;
-	background-color:white;
-	
+.pixel
+{
+   display:table-cell;
+   width: 40px ;
+   height: 40px;
+   background-color: white;
 }
 
-.pen{
-	display:inline-block;
-	width:30px;
-	height:30px;
-	border:2px solid black;
-	
-	
-	
+.pen
+{
+   display: inline-block;
+   width: 30px ;
+   height: 30px;
+   border: 2px solid black;
 }
-#currentColor{
-	
-	margin:10px 0px 0px 0px;
-	display:inline-block;
-	width:30px;
-	height:30px;
-	border:2px solid black;
-	
-	
-	
+#currentColor
+{
+   margin: 10px 0px  0px 0px;
+   display: inline-block;
+   width: 30px ;
+   height: 30px;
+   border: 2px solid black;  
+   background-color: black;
+    
 }
+.button
+{
+   display: inline-block;
+   width: 100px ;
+   padding:5px;
+   border: 2px solid black;
+}
+#toolBox
+{
+   padding: 5px;
+}
+

@@ -1,163 +1,156 @@
-var penlcolor="black"
-var isHeader = 0
-const emptyRow = '<div class="row"></div>';
+var penColor = "black";
+var isHeader = 0;
+const emptyRow =  '<div class="row"></div>';
 const emptyColumn = '<div class="pixel" onclick="setPixelColor(this)"></div>';
+
+
+
 
 
 function setPixelColor(pixel)
 {
-	pixel.style.backgroundColor=pencolor;
-	
-	
+   pixel.style.backgroundColor = penColor;
 }
 function setPenColor(pen)
-
 {
-	pencolor=pen;
-	setcurrentColor(pencolor);
-	
+   penColor = pen;
+   setCurrentColor(penColor);
+}
+function setCurrentColor(color)
+{
+   var currentColor = document.getElementById("currentColor");
+   currentColor.style.backgroundColor = color;
 }
 
-function setcurrentColor(color)
-{
-	var currentcolor=document.getElementById("curentcolor");
-	currentColor.style.backgroundColor=color;
-	
-	
-}
 function setText()
 {
-	if (isHeader==0)
-	{
-	document.getElementById("palette").innerHTML = '<h1 id="paletteHeater">Paleta</h1>' + document.getElementById("palette").innerHTML;
-	isHeader=1;
-	}
-	else
-	{
-		document.getElementById("paletteHeater"). remove();
-	isHeader=0;	
-	}
+   if (isHeader == 0)
+   {
+      document.getElementById("palette").innerHTML = '<h1 id="paletteHeader">Paleta</h1>' +  document.getElementById("palette").innerHTML;
+      isHeader = 1;
+   }
+   else
+   {
+      document.getElementById("paletteHeader").remove();
+      isHeader = 0;
+   }
 }
+
 function addRow()
 {
+   
+   var rowCollection = document.getElementsByClassName("row");
+   var rowCounter = rowCollection.length;
 
-	var rowCollection = document.getElementsByClassName("row");
-	document.getElementById("Art").innerHTML = document.getElementById("Art").innerHTML + emptyRow ; // '<div class= "row">' +rowCollection[0].innerHTML + "</div>"
-	addColumnToRow();
+   var pixelCollection = document.getElementsByClassName("pixel");
+   var pixelCounter = pixelCollection.length ;
+   
+   if (rowCounter <= 0)
+   {
+      countPixelsInRow = 8    
+   }
+   else
+   {
+      var countPixelsInRow = pixelCounter/rowCounter;
+   }
+   
+   document.getElementById("art").innerHTML = document.getElementById("art").innerHTML + emptyRow;
+   
+   rowCollection = document.getElementsByClassName("row");
+   //loop for columns inner "row loop"
+   for (j=0;j<countPixelsInRow;j++) 
+   {
+         //adding columns for the last added row (actual value of "i" variable)
+         rowCollection[rowCounter].innerHTML = rowCollection[rowCounter].innerHTML + emptyColumn;    
+   }
+   
+
 }
+
 function removeRow()
 {
-	
-	var rowCollection = document.getElementsByClassName("row");
-	var count = rowCollection.length;
-	rowCollection[count - 1].remove();
-	
-	
+   var rowCollection = document.getElementsByClassName("row"); 
+   var count = rowCollection.length;
+   rowCollection[count-1].remove();
+   
 }
-
-
 
 function addRowsAtLoad()
 {
-	var i , j;
-	for(i=0;i<8;i++)
-	{
-		document.getElementById("Art").innerHTML = document.getElementById("Art").innerHTML +	emptyRow;
-		
-		var rowCollection = document.getElementsByClassName("row");
-		for(j=0; j<8;j++)
-		{
-			rowCollection[i].innerHTML = rowCollection[i].innerHTML + emptyColumn;
-			
-		}
-		
-	}
-	numberOfDiv();
-	
+   //decalre variables
+   var i,j;
+   
+   //loop for rows
+   for (i=0; i<8; i++)
+   {
+      //adding row 
+      document.getElementById("art").innerHTML = document.getElementById("art").innerHTML + emptyRow;
+      
+      //getting all rows
+      var rowCollection = document.getElementsByClassName("row"); 
+      
+      //loop for columns inner "row loop"
+      for (j=0;j<8;j++) 
+      {
+            //adding columns for the last added row (actual value of "i" variable)
+            rowCollection[i].innerHTML = rowCollection[i].innerHTML + emptyColumn;    
+      }    
+   }
+   
 }
 
 
 function addColumn()
 {
-	var rowCollection = document.getElementsByClassName("row");
-	var count = rowCollection.length;
-	
-	var i , j;
-	for(i=0;i<count;i++)
-	{
-			rowCollection[i].innerHTML = rowCollection[i].innerHTML + emptyColumn;
-		
-	}
-	numberOfDiv();
+      var rowCollection = document.getElementsByClassName("row"); 
+      var count = rowCollection.length;
+      for (j=0;j<count;j++) 
+      {
+            rowCollection[j].innerHTML = rowCollection[j].innerHTML + emptyColumn;    
+      }   
+   
 }
 
-function addColumnToRow()
-{
-	
-	var rowCollection = document.getElementsByClassName("row");
-	var count = rowCollection.length;
 
-	if( count > 1)
-	{
-		var columnCollection = document.getElementsByClassName("pixel");
-		var countColumns = columnCollection.length /(count -1);
-		var j;
-	
-		for(j=0; j<countColumns;j++)
-		{
-			rowCollection[count -1 ].innerHTML = rowCollection[count -1].innerHTML + emptyColumn;
-			
-		}
-	}
-	else
-	{
-				var j;
-	
-		for(j=0; j<8;j++)
-			{
-				rowCollection[count -1 ].innerHTML = rowCollection[count -1].innerHTML + emptyColumn;
-				
-			}
-		
-	}
-}
 
 function removeColumn()
 {
-	var rowCollection = document.getElementsByClassName("row");
-	var rowCounter = rowCollection.length;
+   var rowCollection = document.getElementsByClassName("row");
+   var rowCounter = rowCollection.length;
+
+   var columnCollection = document.getElementsByClassName("pixel");
+   var pixelCounter = columnCollection.length ;
+   
+   if(rowCounter>0 && pixelCounter>0)
+   {
+      var countColumnsInRow = pixelCounter/rowCounter;
+      for(i=(rowCounter-1);i>(-1);i--)
+      {
+         var index =((i+1)*countColumnsInRow)-1
+         columnCollection[index].remove();
+
+      }
+   }
+   columnCollection = document.getElementsByClassName("pixel");
+   pixelCounter = columnCollection.length ;
+
+}
+
+function paintAll()
+
+{
+
+		var pixelCollection = document.getElementsByClassName("pixel");
+	var count = pixelCollection.length;
 	
-	var columnCollection = document.getElementsByClassName("pixel");
-	var pixelCounter = columnCollection.length ;
-	window.alert(pixelCounter);
-	if(rowCounter>0 && pixelCounter>0)
+	for(j=0; j<count;j++)
 	{
-		var countColumnsInRow = pixelCounter/rowCounter;
-		for(i=0;i<rowCounter;i++)
-		{
-			var index =((i+1)*countColumnsInRow)-1
-			window.alert(index);
-			columnCollection[index].remove();
+		pixel = pixelCollection[j];
+		setPixelColor(pixel);
 		
-		}
-	
-	
 	}
-	columnCollection = document.getElementsByClassName("pixel");
-	pixelCounter = columnCollection.length ;
-	window.alert(pixelCounter);
-}
-
-function numberOfDiv(){
-	var columnCollection = document.getElementsByClassName("pixel");
-	var i;
-	for (i=0;i<columnCollection.length;i++)
-	{
-		columnCollection[i].innerHTML = i;
-	}
-}
-	
 	
 
-
+	
+}
 

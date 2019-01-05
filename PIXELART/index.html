@@ -1,47 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-	<meta charset="utf-8"/>
-	<title>PixelArt</title>
-	<link rel ="stylesheet" type="text/css" href ="styles.css" />
+   <meta charset="utf-8" />
+   <title>PixelArt</title>
+   <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
+<body onload = "addRowsAtLoad()">
+   <div id="toolBox">
+         <div class="button" onclick = "addRow()">Add row</div>
+         <div class="button" onclick = "removeRow()">Remove row</div>
+         <div class="button" onclick = "addColumn()">Add column</div>
+         <div class="button" onclick = "removeColumn()">Remove column</div>
+         <div class="button" onclick = "paintAll()">Paint all</div>
+   </div>
+   <div id="palette">
+      <div class="pen" style="background-color: black" onclick="setPenColor('black')"></div>
+      <div class="pen" style="background-color: white" onclick="setPenColor('white')"></div>
+       <div class="pen" style="background-color: green" onclick="setPenColor('green')"></div>
+      <div class="pen" style="background-color: blue" onclick="setPenColor('blue')"></div>
+       <div class="pen" style="background-color: red" onclick="setPenColor('red')"></div>
+      <div class="pen" style="background-color: yellow" onclick="setPenColor('yellow')"></div>
+   </div>
+   <div id="art">
+      
+   
+   </div>
+   <div id="track">
+      <div id ="currentColor"></div>
+      <div id = "debug"></div>
+   </div>
 
-
-<body onload ="addRowsAtLoad()">
-	<center>
-	<button onclick ="addRow()">dodaj wiersz</button><p>
-	<button onclick ="removeRow()">usuń wiersz</button>
-	
-	<button onclick ="addColumn()">dodaj kolumne</button><p>
-	<button onclick ="removeColumn()">usuń kolumne</button>
-	
-	</center></p>
-	<div id="palette">
-		<div class="pen" style="background-color:black" onclick="setPenColor('black')"></div>
-		<div class="pen" style="background-color:white" onclick="setPenColor('white')"></div>
-		<div class="pen" style="background-color:red" onclick="setPenColor('red')"></div>
-		<div class="pen" style="background-color:yellow" onclick="setPenColor('yellow')"></div>
-		<div class="pen" style="background-color:green" onclick="setPenColor('green')"></div>
-		<div class="pen" style="background-color:blue" onclick="setPenColor('blue')"></div>
-		<div class="pen" style="background-color:pink" onclick="setPenColor('pink')"></div>
-		<div class="pen" style="background-color:#00ff00" onclick="setPenColor('#00ff00')"></div>
-		
-	</div>
-	
-	
-	<div id="Art">
-		
-		
-	</div>
-	
-	<div id="track"></div>
-	<div id="currentColor"></div>
-		
-		
-	<script src= "scripts.js"></script>
+   <script src="scripts.js"></script>
 </body>
 
 </html>
