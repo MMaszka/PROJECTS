@@ -1,0 +1,40 @@
+function silnia(ile)
+{	var silnia = 1
+	var ile 
+	var licznik = 1
+	
+			if(ile>=0)
+		{
+			while(ile>=licznik)
+			{
+				silnia*=licznik;
+				licznik+=1;
+				
+			}
+			return silnia;	
+		}
+		return "niemozliwe"
+		
+}
+
+
+
+function silnia(ile)
+{
+	if (m>=0)
+	{
+		if((n=0) || (n=1))
+		{
+			return 1;
+			
+		}
+		else
+		{
+			return n*silnia(n-1);
+		}
+	}
+	else
+	{
+		return "chyba nie";
+	}
+}
